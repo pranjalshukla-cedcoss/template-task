@@ -90,7 +90,7 @@ get_header();
                       <span><?php the_category(); ?></span>
                       <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                       <ul class="post-info">
-                        <li><a href="<?php ?>"><?php the_author(); ?></a></li>
+                        <li><a href="<?php  echo get_permalink( get_option( 'page_for_posts' ) );  ?>"><?php the_author(); ?></a></li>
                         <li><a href="<?php ?>"><?php the_date(); ?></a></li>
                         <li><a href="<?php ?>"><?php comments_number(); ?></a></li>
                       </ul>

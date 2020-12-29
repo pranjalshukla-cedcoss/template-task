@@ -71,18 +71,23 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
                 <div class="col-lg-6">
                   <div class="blog-post">
                     <div class="blog-thumb">
-                      <img src="assets/images/blog-thumb-01.jpg" alt="">
+                    <?php
+					if ( has_post_thumbnail() ) {
+                        the_post_thumbnail( get_the_ID(), 'full' );
+					  }
+					  ?>
                     </div>
                     <div class="down-content">
                       <span style="color:orange;"><?php the_category(); ?></span>
                       <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                       <ul class="post-info">
-                        <li><a href="#"><?php the_author(); ?></a></li>
-                        <li><a href="#"><?php the_date(); ?></a></li>
-                        <li><a href="#"><?php comments_number(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></li>
                       </ul>
-					  <p><?php the_post(); 
-					      get_template_part( 'template-parts/content', get_post_type() );
+            <p><?php the_post(); 
+            the_excerpt();
+					      //get_template_part( 'template-parts/content', get_post_type() );
 					  ?></p>
                       <div class="post-options">
                         <div class="row">
