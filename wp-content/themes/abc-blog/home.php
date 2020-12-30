@@ -71,20 +71,11 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
                 <div class="col-lg-6">
                   <div class="blog-post">
                     <div class="blog-thumb">
-                    <?php
-					if ( has_post_thumbnail() ) {
-                        the_post_thumbnail(get_the_ID(), 'full');
-					  }
-					  ?>
+                    
                     </div>
                     <div class="down-content">
-                      <span style="color:orange;"><?php echo the_category(); ?></span>
-                      <a href="<?php the_permalink(); ?>"><h4><?php echo get_the_title(); ?></h4></a>
-                      <ul class="post-info">
-                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_author(); ?></a></li>
-                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></li>
-                        <li><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></li>
-                      </ul>
+                      
+                      
             <p><?php the_post();
             $a=get_the_excerpt();
             echo substr($a, 0, 100);
@@ -93,6 +84,19 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
                       <div class="post-options">
                         <div class="row">
                           <div class="col-lg-12">
+                          <span style="color:orange;"><?php echo the_category(); ?></span>
+                      <a href="<?php the_permalink(); ?>"><h4><?php echo get_the_title(); ?></h4></a>
+                      <ul class="post-info">
+                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_author(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></li>
+                      </ul>
+                      <?php
+					if ( has_post_thumbnail() ) {
+                        the_post_thumbnail(get_the_ID(), 'full');
+					  }
+					  ?>
+                      
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
                               <li><?php the_tags(); ?>,</li>
