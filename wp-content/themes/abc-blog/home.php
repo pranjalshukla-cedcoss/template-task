@@ -73,20 +73,21 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
                     <div class="blog-thumb">
                     <?php
 					if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( get_the_ID(), 'full' );
+                        the_post_thumbnail(get_the_ID(), 'full');
 					  }
 					  ?>
                     </div>
                     <div class="down-content">
-                      <span style="color:orange;"><?php the_category(); ?></span>
-                      <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                      <span style="color:orange;"><?php echo the_category(); ?></span>
+                      <a href="<?php the_permalink(); ?>"><h4><?php echo get_the_title(); ?></h4></a>
                       <ul class="post-info">
-                        <li><a href="<?php the_permalink(); ?>"><?php the_author(); ?></a></li>
-                        <li><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_author(); ?></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></li>
                         <li><a href="<?php the_permalink(); ?>"><?php comments_number(); ?></a></li>
                       </ul>
-            <p><?php the_post(); 
-            the_excerpt();
+            <p><?php the_post();
+            $a=get_the_excerpt();
+            echo substr($a, 0, 100);
 					      //get_template_part( 'template-parts/content', get_post_type() );
 					  ?></p>
                       <div class="post-options">
@@ -102,6 +103,7 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
                     </div>
                   </div>
                 </div>
+                
 
 <?php
 	
@@ -123,6 +125,7 @@ $blog_posts1 = new WP_Query( array( 'post_type' => 'post', 'post_status’' => '
 	// endif;
 
 endwhile; // End of the loop.
+
 endif;
 ?>
 
@@ -130,13 +133,17 @@ endif;
                 
 
                 <div class="col-lg-12">
-                  <ul class="page-numbers">
+                <?php echo paginate_links(); 
+                        
+                  ?>
+                  <!-- <ul class="page-numbers">
                   
                     <li><a href="#">1</a></li>
                     <li class="active"><a href="#">2</a></li>
-                    <li><a href="<?php next_posts_link( 'Older posts' ); ?>"></a></li>
+                    <li><a href="<?php //next_posts_link( 'Older posts' ); ?>"></a></li>
                     <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                  </ul>
+                  </ul> -->
+                  
                 </div>
               </div>
             </div>
