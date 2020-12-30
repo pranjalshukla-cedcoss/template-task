@@ -11,22 +11,22 @@
 
 ?>
 
-	<!-- <footer id="colophon" class="site-footer">
-		<div class="site-info"> -->
-			<a href="<?php ///echo esc_url( __( 'https://wordpress.org/', 'abc-blog' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				///printf( esc_html__( 'Proudly powered by %s', 'abc-blog' ), 'WordPress' );
-				?>
-			</a>
-			<!-- <span class="sep"> | </span> -->
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				//printf( esc_html__( 'Theme: %1$s by %2$s.', 'abc-blog' ), 'abc-blog', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-	<footer>
+  <!-- <footer id="colophon" class="site-footer">
+    <div class="site-info"> -->
+      <a href="<?php ///echo esc_url( __( 'https://wordpress.org/', 'abc-blog' ) ); ?>">
+        <?php
+        /* translators: %s: CMS name, i.e. WordPress. */
+        ///printf( esc_html__( 'Proudly powered by %s', 'abc-blog' ), 'WordPress' );
+        ?>
+      </a>
+      <!-- <span class="sep"> | </span> -->
+        <?php
+        /* translators: 1: Theme name, 2: Theme author. */
+        //printf( esc_html__( 'Theme: %1$s by %2$s.', 'abc-blog' ), 'abc-blog', '<a href="http://underscores.me/">Underscores.me</a>' );
+        ?>
+    </div><!-- .site-info -->
+  </footer><!-- #colophon -->
+  <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
